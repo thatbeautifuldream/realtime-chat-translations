@@ -17,13 +17,15 @@ export async function POST(request: Request) {
     const translation = await hf.translation({
       model: "facebook/mbart-large-50-many-to-many-mmt",
       inputs: body.source,
+      // @ts-expect-error : parameters type unavailable in @huggingface/inference
       parameters: {
-        src_lang: "en_XX", // Assuming English as source language
+        src_lang: "en_XX",
         tgt_lang: body.targetLang,
       },
     });
     return NextResponse.json({
       ok: true,
+      // @ts-expect-error : response type unavailable in @huggingface/inference
       output: translation.translation_text,
     });
   } catch (err) {
