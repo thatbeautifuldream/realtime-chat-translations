@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${nunito.className} antialiased`}>{children}</body>
+      <body className={`${nunito.className} antialiased`}>
+        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
+      </body>
     </html>
   );
 }
