@@ -1,7 +1,8 @@
 import { HfInference } from "@huggingface/inference";
 import { NextResponse } from "next/server";
+import { env } from "@/env";
 
-const hf = new HfInference(process.env.HUGGINGFACE_ACCESS_TOKEN);
+const hf = new HfInference(env.HUGGINGFACE_ACCESS_TOKEN);
 
 export async function POST(request: Request) {
   const body = await request.json();
