@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { useDebounce } from "@/hooks/use-debounce";
-import { useSearchParams } from "next/navigation";
 import { useQueryState } from "nuqs";
 import {
   Select,
@@ -20,7 +19,6 @@ const LANGUAGES = {
   de_DE: "German",
   es_XX: "Spanish",
   zh_CN: "Chinese",
-  // Add more languages as needed
 };
 
 export default function TranslationForm() {
